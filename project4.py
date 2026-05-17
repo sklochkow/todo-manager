@@ -4,7 +4,6 @@
 # }
 
 
-
 def show_tasks(store):
     """Выводит все задачи на экран"""
 
@@ -50,5 +49,12 @@ def complete_task(store, task_id):
 
 
 
+def main():
+    todo_store = {}
 
-
+    while True:
+        print("\n=== МЕНЮ ===")
+        print("1. Показать все задачи")
+        print("2. Добавить задачу")
+        print("3. Отметить задачу как выполненную")
+        print("4. Выйти")
