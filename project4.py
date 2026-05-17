@@ -1,9 +1,3 @@
-# todo_store = {
-#     1: {"title": "Повторить списки и словари", "completed": False},
-#     30: {"title": "Сдать финальный проект", "completed": True}
-# }
-
-
 def show_tasks(store):
     """Выводит все задачи на экран"""
 
@@ -58,3 +52,24 @@ def main():
         print("2. Добавить задачу")
         print("3. Отметить задачу как выполненную")
         print("4. Выйти")
+
+        choice = input("\nВыберите действие (1-4): ").strip()
+
+        if choice == "4":
+            print("Программа завершена, хорошего дня!")
+            break
+
+        elif choice == "1":
+            show_tasks(todo_store)
+        elif choice == "2":
+            task_title = input("Введите название задачи: ").strip()
+            add_task(todo_store, task_title)
+        elif choice == "3":
+            show_tasks(todo_store)
+
+            if todo_store:
+                task_id = int(input("\n Введите ID выполненной задачи: "))
+                complete_task(todo_store, task_id)
+
+if __name__ == "__main__":
+    main()
