@@ -39,6 +39,14 @@ def add_task(store, title):
     print(f"[+] Задача '{title}' успешно добавлена с ID: {new_id}")
 
 
+def complete_task(store, task_id):
+    """Отмечает задачу как выполненную по ее ID"""
+
+    if task_id in store:
+        store[task_id]['completed'] = True
+        print(f"[V] Задача №{task_id} ('{store[task_id]['title']}') выполнена!")
+    else:
+        print("[!] Ошибка: Задачи с таким ID не существует")
 
 
 
